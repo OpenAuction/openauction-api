@@ -1,5 +1,5 @@
 try{require('dotenv').config()}catch(e){}
-const { ApolloServer, gql } = require('apollo-server');
+const { ApolloServer } = require('apollo-server');
 const { Pool } = require('pg');
 const schema = require('./schema/schema');
 
@@ -41,6 +41,10 @@ pool.query('SELECT NOW()', err => {
 const server = new ApolloServer({
   typeDefs: schema,
   resolvers,
+  engine: {
+    apiKey: process.env.ENGINE_API_KEY,
+    schemaTag: process.env.ENGINE_SCHEMA_TAG,
+  },
   context: {
     pool,
   },

@@ -1,0 +1,372 @@
+interface EventMessage {
+  id: ID
+}
+
+interface Message {
+  id: ID!
+  timestamp: Float!
+  timeStampSent: Float!
+  eventTag: String!
+  eventId: Int!
+  saleId: String!
+}
+
+type AUCTIONEER implements Message {
+  id: ID!
+  timestamp: Float!
+  timeStampSent: Float!
+  eventTag: String!
+  eventId: Int!
+  saleId: String!
+  message: AUCTIONEER_Message!
+}
+
+type AUCTIONEER_Message implements EventMessage {
+  id: ID
+  LANE: String!
+  YARD: String!
+  USERID: String!
+  CMPCODE: String!
+  USERDEF1: String!
+  USERDEF2: String!
+  BONUSTIME: String!
+  EVENTCODE: String!
+  LOTNUMBER: String!
+}
+
+type BIDREC implements Message {
+  id: ID!
+  timestamp: Float!
+  timeStampSent: Float!
+  eventTag: String!
+  eventId: Int!
+  saleId: String!
+  message: BIDREC_Message!
+}
+
+type BIDREC_Message implements EventMessage {
+  id: ID
+  NEXT: String!
+  TYPE: String!
+  LOTNO: String!
+  TOKEN: String!
+  APRFLG: String!
+  CURBID: String!
+  MINMET: String!
+  BUYERNO: String!
+  BUYERST: String!
+  BUYERCTR: String!
+  IPADDRESS: String!
+}
+
+type BUYERCB implements Message {
+  id: ID!
+  timestamp: Float!
+  timeStampSent: Float!
+  eventTag: String!
+  eventId: Int!
+  saleId: String!
+  message: BUYERCB_Message!
+}
+
+type BUYERCB_Message implements EventMessage {
+  id: ID
+  CBIP: String!
+  CBBID: String!
+  CBLANE: String!
+  CBDESC1: String!
+  CBDESC2: String!
+  CBDESC3: String!
+  CBDESC4: String!
+  CBDESC5: String!
+  CBDESC6: String!
+  CBDESC7: String!
+  CBDESC8: String!
+  CBDESC9: String!
+  CBFLAG1: String!
+  CBFLAG2: String!
+  CBTOKEN: String!
+  CBACTION: String!
+  CBBIDTYP: String!
+  CBBYRNBR: String!
+  CBDESC10: String!
+  CBDESCRI: String!
+  CBERRCOD: String!
+  CBERRMSG: String!
+  CBIMGPTH: String!
+  CBITMNBR: String!
+  CBLOTNBR: String!
+  CBPREBID: String!
+  CBSELLER: String!
+  CBSTORE1: String!
+  CBSTORE2: String!
+  CBSUBCMD: String!
+  CBYRDNBR: String!
+}
+
+type CURITEM implements Message {
+  id: ID!
+  timestamp: Float!
+  timeStampSent: Float!
+  eventTag: String!
+  eventId: Int!
+  saleId: String!
+  message: CURITEM_Message!
+}
+
+type CURITEM_Message implements EventMessage {
+  id: ID
+  ACV: String!
+  VIN: String!
+  BRAND: String!
+  COLOR: String!
+  DESC1: String!
+  DESC2: String!
+  DESC3: String!
+  DESC4: String!
+  DESC5: String!
+  DESC6: String!
+  DESC7: String!
+  DESC8: String!
+  DESC9: String!
+  LOTNO: String!
+  ADLINE: String!
+  APRFLG: String!
+  AUCDAY: String!
+  AUCMON: String!
+  DAMAGE: String!
+  DESC10: String!
+  ENGINE: String!
+  ITEMNO: String!
+  LDESC1: String!
+  LDESC2: String!
+  LDESC3: String!
+  LDESC4: String!
+  LDESC5: String!
+  LDESC6: String!
+  LDESC7: String!
+  LDESC8: String!
+  LDESC9: String!
+  MAXBID: String!
+  PIXCNT: String!
+  VALUE1: String!
+  VALUE2: String!
+  VALUE3: String!
+  VALUE4: String!
+  VALUE5: String!
+  VALUE6: String!
+  VALUE7: String!
+  VALUE8: String!
+  VALUE9: String!
+  AUCYEAR: String!
+  BUYERNO: String!
+  IMGPATH: String!
+  LDESC10: String!
+  MILEAGE: String!
+  OKTOBID: String!
+  REPCOST: String!
+  SVRTIME: String!
+  VALUE10: String!
+  CERTCODE: String!
+  CURRENCY: String!
+  DESCRIPT: String!
+  LOCATION: String!
+  LOSSCODE: String!
+  STARTBID: String!
+  TOTUSERS: String!
+  YARDNAME: String!
+  TITLETYPE: String!
+}
+
+type ChatMsg implements Message {
+  id: ID!
+  timestamp: Float!
+  timeStampSent: Float!
+  eventTag: String!
+  eventId: Int!
+  saleId: String!
+  message: ChatMsg_Message!
+}
+
+type ChatMsg_Message implements EventMessage {
+  id: ID
+  saleId: String!
+  formatName: String!
+  chatMessage: String!
+  messageType: String!
+  publicMessage: String!
+  toBuyerNumbers: String!
+  fromBuyerNumber: String!
+  msgFromAuctioneer: String!
+}
+
+type ENDAUC implements Message {
+  id: ID!
+  timestamp: Float!
+  timeStampSent: Float!
+  eventTag: String!
+  eventId: Int!
+  saleId: String!
+  message: ENDAUC_Message!
+}
+
+type ENDAUC_Message implements EventMessage {
+  id: ID
+  TEXT: String!
+}
+
+type PREBID implements Message {
+  id: ID!
+  timestamp: Float!
+  timeStampSent: Float!
+  eventTag: String!
+  eventId: Int!
+  saleId: String!
+  message: PREBID_Message!
+}
+
+type PREBID_Message implements EventMessage {
+  id: ID
+  TYPE: String!
+  LOTNO: String!
+  TOKEN: String!
+  APRFLG: String!
+  MINMET: String!
+  PREBID: String!
+  BUYERNO: String!
+  BUYERST: String!
+  BUYERCTR: String!
+  EVENTCODE: String!
+  IPADDRESS: String!
+}
+
+type PROP implements Message {
+  id: ID!
+  timestamp: Float!
+  timeStampSent: Float!
+  eventTag: String!
+  eventId: Int!
+  saleId: String!
+  message: PROP_Message!
+}
+
+type PROP_Message implements EventMessage {
+  id: ID
+  TAG: String!
+  VALUE: String!
+  CATEGORY: String!
+}
+
+type SALESLIST implements Message {
+  id: ID!
+  timestamp: Float!
+  timeStampSent: Float!
+  eventTag: String!
+  eventId: Int!
+  saleId: String!
+  message: SALESLIST_Message!
+}
+
+type SALESLIST_Message implements EventMessage {
+  id: ID
+  SLLANE: String!
+  SLMILAWY: String!
+  SLSALDAT: String!
+  SLSALRNK: String!
+  SLSALTIM: String!
+  SLSALTYP: String!
+  SLSUBCMD: String!
+  SLSVRNAM: String!
+  SLTIMZON: String!
+  SLYRDNAM: String!
+  SLYRDNBR: String!
+}
+
+type SELLER implements Message {
+  id: ID!
+  timestamp: Float!
+  timeStampSent: Float!
+  eventTag: String!
+  eventId: Int!
+  saleId: String!
+  message: SELLER_Message!
+}
+
+type SELLER_Message implements EventMessage {
+  id: ID
+  SLLANE: String!
+  SLAPRVL: String!
+  SLLOTNBR: String!
+  SLMINBID: String!
+  SLMINNET: String!
+  SLSELLER: String!
+  SLSUBCMD: String!
+  SLYRDNBR: String!
+}
+
+type SOLD implements Message {
+  id: ID!
+  timestamp: Float!
+  timeStampSent: Float!
+  eventTag: String!
+  eventId: Int!
+  saleId: String!
+  message: SOLD_Message!
+}
+
+type SOLD_Message implements EventMessage {
+  id: ID
+  BID: String!
+  TYPE: String!
+  LOTNO: String!
+  APRFLG: String!
+  MINMET: String!
+  BUYERNO: String!
+  BUYERST: String!
+  BUYERCTR: String!
+  ATTRIBUTE: String!
+}
+
+type SOLDPEND implements Message {
+  id: ID!
+  timestamp: Float!
+  timeStampSent: Float!
+  eventTag: String!
+  eventId: Int!
+  saleId: String!
+  message: SOLDPEND_Message!
+}
+
+type SOLDPEND_Message implements EventMessage {
+  id: ID
+  BID: String!
+  TYPE: String!
+  LOTNO: String!
+  APRFLG: String!
+  MINMET: String!
+  BUYERNO: String!
+}
+
+type STARTITEM implements Message {
+  id: ID!
+  timestamp: Float!
+  timeStampSent: Float!
+  eventTag: String!
+  eventId: Int!
+  saleId: String!
+  message: STARTITEM_Message!
+}
+
+type STARTITEM_Message implements EventMessage {
+  id: ID
+  NEXT: String!
+  LOTNO: String!
+  APRFLG: String!
+  MINMET: String!
+  BUYERNO: String!
+  STARTAMT: String!
+}
+
+type Query {
+  messages: [Message!]!
+}

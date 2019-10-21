@@ -1,0 +1,17 @@
+{
+  "name": "openauction-api",
+  "version": "0.1.0",
+  "description": "open-auction graphql server",
+  "main": "index.js",
+  "repository": "git@github.com:OpenAuction/openauction-api.git",
+  "author": "friss213@gmail.com",
+  "license": "MIT",
+  "dependencies": {
+    "apollo-server": "2.9.6",
+    "graphql": "14.5.8",
+    "pg": "7.12.1"
+  },
+  "devDependencies": {
+    "dotenv": "^8.2.0"
+  }
+}

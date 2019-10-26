@@ -6,12 +6,34 @@
   "repository": "git@github.com:OpenAuction/openauction-api.git",
   "author": "friss213@gmail.com",
   "license": "MIT",
+  "engines": {
+    "node": "^12.12.0",
+    "npm": "^6.0.0"
+  },
   "dependencies": {
-    "apollo-server": "2.9.6",
+    "apollo-server-express": "2.9.7",
+    "aws-sdk": "2.556.0",
+    "connect-pg-simple": "6.0.1",
+    "cookie-parser": "1.4.4",
+    "express": "4.17.1",
+    "express-session": "1.17.0",
+    "file-stream-rotator": "0.5.5",
     "graphql": "14.5.8",
-    "pg": "7.12.1"
+    "helmet": "3.21.2",
+    "memcached": "2.2.2",
+    "morgan": "1.9.1",
+    "pg": "7.12.1",
+    "pm2": "4.1.2",
+    "pug": "2.0.4",
+    "serve-favicon": "2.5.0",
+    "server-timing": "2.1.1"
   },
   "devDependencies": {
-    "dotenv": "^8.2.0"
+    "dotenv": "^8.2.0",
+    "prettier": "1.18.2"
+  },
+  "scripts": {
+    "start": "node ./bin/prod.js",
+    "dev": "NODE_ENV=development node ./bin/www"
   }
 }

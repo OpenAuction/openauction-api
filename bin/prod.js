@@ -6,7 +6,7 @@ const maxMemory = process.env.WEB_MEMORY || 1024;
 pm2.connect(() => {
   pm2.start(
     {
-      script: 'www',
+      script: './bin/www',
       name: 'openauction-prod',
       exec_mode: 'cluster',
       instances,

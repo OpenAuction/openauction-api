@@ -19,7 +19,7 @@
     "aws-sdk": "2.556.0",
     "connect-pg-simple": "6.0.1",
     "cookie-parser": "1.4.4",
-    "express": "4.17.1",
+    "express": "4.17.3",
     "express-session": "1.17.0",
     "file-stream-rotator": "0.5.5",
     "graphql": "14.5.8",
